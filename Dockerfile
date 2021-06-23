@@ -11,3 +11,11 @@ RUN npm install
 
 COPY . .
 
+ENV PORT = 8080
+
+CMD ["npm","start"]
+
+# creating docker image
+# docker build -t ntwari/demoapp:1.0 path_to_your_dockerfile
+
+#docker push

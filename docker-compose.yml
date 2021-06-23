@@ -1,0 +1,22 @@
+version: '3'
+services: 
+    web: 
+        build: .
+        ports: 
+            - "8080:8080"
+
+        
+    db: 
+        image: "mysql"
+        environment: 
+            MYSQL_ROOT_PASSWORD: password
+
+        volume:
+            - db-data:/foo
+
+volumes: 
+    db-data:
+        
+        
+# running this file
+#docker-compose up

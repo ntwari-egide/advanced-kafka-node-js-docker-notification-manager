@@ -1,33 +1,40 @@
-const { ProducerStream, ConsumerGroupStream } = require("kafka-node");
+console.log("producer is running .....");
 
-require("kafka-node")
+var kafka = require('kafka-node')
 
-const resultProducer = new ProducerStream();
- 
-KAFKA_TOPIC = "yombi-topic-test"
 
-const consumerOptions = {
-  kafkaHost: 'localhost:9092',
-  groupId: 'yombi',
-  sessionTimeout: 15000,
-  protocol: ['roundrobin'],
-  asyncPush: false,
-  id: 'consumer1',
-  fromOffset: 'latest'
-};
- 
-const consumerGroup = new ConsumerGroupStream(consumerOptions, 'ExampleTopic');
- 
-const messageTransform = new Transform({
-  objectMode: true,
-  decodeStrings: true,
-  transform (message, encoding, callback) {
-    console.log(`Received message ${message.value} transforming input`);
-    callback(null, {
-      topic: 'RebalanceTopic',
-      messages: `You have been (${message.value}) made an example of`
-    });
-  }
-});
- 
-consumerGroup.pipe(messageTransform).pipe(resultProducer);
+let KAFKA_TOPIC = "yombi-topic-test"
+
+let Producer = kafka.Producer
+let KeyedMessage = kafka.KeyedMessage
+let client = new kafka.KafkaClient()
+let producer = new Producer(client)
+
+
+function sendMessageTemplate(){
+  km = new KeyedMessage('key','message'),
+    payloads = [
+        {
+            topic : KAFKA_TOPIC,
+            messages: {
+                data: {
+                    message: "You sent log",
+                    type: "DANGER",
+                    seen: false,
+                    createdAt: Date.now()
+                }
+            },
+            partition: 0}
+    ]
+
+    producer.on('ready', () => {
+        producer.send(payloads,(err,data) => {
+            console.log("Message data sent: ",data);
+        })
+    })
+}
+
+setInterval(()=> {
+    sendMessageTemplate()
+},300)
+

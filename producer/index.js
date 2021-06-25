@@ -8,7 +8,7 @@ Notification = {
 }
 
 var kafka = require('kafka-node'),
-KAFKA_TOPIC = "yombi-topic-test"
+KAFKA_TOPIC = "topic yombi-topic-test-2"
 
 Producer = kafka.Producer,
 KeyedMessage = kafka.KeyedMessage

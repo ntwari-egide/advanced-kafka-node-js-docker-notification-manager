@@ -34,7 +34,7 @@ function createTopic(topicName){
 
 
 function deleteTopic(topicName){
-    consumer.removeTopics([topicName], (err, removed) => {
-        console.log("deleted topic: ",removed);
+    consumer.removeTopics([topicName], (err, res) => {
+        console.log("deleted topic: ",res);
     });
 }

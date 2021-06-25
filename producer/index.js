@@ -1,7 +1,7 @@
 console.log("producer is running .....");
 
 var kafka = require('kafka-node'),
-KAFKA_TOPIC = "yombi-topic-test"
+KAFKA_TOPIC = "new topic createds"
 
 Producer = kafka.Producer,
 KeyedMessage = kafka.KeyedMessage

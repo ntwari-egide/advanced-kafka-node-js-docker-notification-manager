@@ -1,6 +1,6 @@
 console.log("consumer is running ....");
 
-KAFKA_TOPIC = "topic yombi-topic-test-2"
+KAFKA_TOPIC = "new topic createds"
 
 var kafka = require('kafka-node'),
     Consumer = kafka.Consumer,

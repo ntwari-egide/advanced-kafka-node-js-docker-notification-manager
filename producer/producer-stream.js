@@ -36,5 +36,5 @@ function sendMessageTemplate(){
 
 setInterval(()=> {
     sendMessageTemplate()
-},300)
+})
 

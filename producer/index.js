@@ -1,6 +1,11 @@
-const { Notification } = require('./dto/notification');
-
 console.log("producer is running .....");
+
+Notification = {
+    message: "",
+    type: "DANGER",
+    seen: false,
+    createdAt: Date.now()
+}
 
 var kafka = require('kafka-node'),
 KAFKA_TOPIC = "yombi-topic-test"
@@ -15,7 +20,7 @@ setInterval(()=> {
     notification.message = "You sent a log"
     km = new KeyedMessage('key','message'),
     payloads = [
-        {topic : KAFKA_TOPIC,messages: Notification,partition: 0}
+        {topic : KAFKA_TOPIC,messages: notification,partition: 0}
     ]
 
     producer.on('ready', () => {

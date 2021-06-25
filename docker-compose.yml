@@ -52,5 +52,5 @@ services:
 
     #to create the topic
       
-    # docker exec kafka kafka-topics.sh --create --zookeeper zookeeper:2181  --replication-factor 1  --partitions 1 --topic yombi-topic-test
+    # docker exec kafka kafka-topics.sh --create --zookeeper zookeeper:2181  --replication-factor 1  --partitions 1 --topic yombi-topic-test-2
 

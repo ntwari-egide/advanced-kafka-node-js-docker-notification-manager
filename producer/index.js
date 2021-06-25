@@ -16,8 +16,8 @@ setInterval(()=> {
 
     producer.on('ready', () => {
         producer.send(payloads,(err,data) => {
-            console.log("Message recieved: ",data);
+            console.log("Message data sent: ",data);
         })
     })
-},3000)
+})
 

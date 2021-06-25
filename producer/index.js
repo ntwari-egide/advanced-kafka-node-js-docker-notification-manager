@@ -1,8 +1,7 @@
 console.log("producer is running .....");
 
-import kafka, { KeyedMessage, Producer } from "kafka-node"
-
-const KAFKA_TOPIC = "yombi-topic-test"
+var kafka = require('kafka-node'),
+KAFKA_TOPIC = "yombi-topic-test"
 
 Producer = kafka.Producer,
 KeyedMessage = kafka.KeyedMessage
@@ -19,4 +18,3 @@ producer.on('ready', () => {
     })
 })
 
-producer.on('error', function (err) {})

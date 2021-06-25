@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:producer": "node ./producer/index.js",
+    "start:producer-stream": "node ./producer/producer-stream.js",
     "start:consumer": "node ./consumer/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

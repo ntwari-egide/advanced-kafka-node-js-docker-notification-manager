@@ -17,4 +17,5 @@ var kafka = require('kafka-node'),
 
     consumer.on('message', (message) => {
         console.log("Message received: ", message.value);
+
     })

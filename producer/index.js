@@ -11,7 +11,7 @@ producer = new Producer(client),
 setInterval(()=> {
     km = new KeyedMessage('key','message'),
     payloads = [
-        {topic : KAFKA_TOPIC,message: 'Hello kafka',partition: 0}
+        {topic : KAFKA_TOPIC,messages: 'Hello kafka',partition: 0}
     ]
 
     producer.on('ready', () => {

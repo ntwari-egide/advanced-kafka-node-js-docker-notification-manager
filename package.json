@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start":"node index.js",
-    "start:producer":"node ./producer/index.js",
-    "start:consumer":"node ./consumer/index.js",
+    "start": "node index.js",
+    "start:producer": "node ./producer/index.js",
+    "start:consumer": "node ./consumer/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/ntwari-egide/advanced-kafka-node-js-docker-notification-manager#readme",
   "dependencies": {
+    "avsc": "^5.7.0",
     "express": "^4.17.1"
   }
 }

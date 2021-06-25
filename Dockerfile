@@ -20,4 +20,8 @@ CMD ["npm","start"]
 # creating docker image
 # docker build -t ntwari/demoapp:1.0 path_to_your_dockerfile
 
+# To run over docker compse
+# docker-compose up
+
+
 #docker push

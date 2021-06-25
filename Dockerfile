@@ -13,7 +13,9 @@ COPY . .
 
 ENV PORT = 8080
 
-CMD ["npm run start"]
+CMD ["npm","start"]
+
+# docker build -t ntwariegide/yombi-kafka:1.0 .
 
 # creating docker image
 # docker build -t ntwari/demoapp:1.0 path_to_your_dockerfile
